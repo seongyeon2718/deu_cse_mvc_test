@@ -22,9 +22,9 @@ public class ServerMain {
             InetAddress localHost = InetAddress.getLocalHost();
             System.out.println("서버 IP: " + localHost.getHostAddress());
 
-            ServerSocket serverSocket = new ServerSocket(5000);
+            ServerSocket serverSocket = new ServerSocket(5000, 50, InetAddress.getByName("0.0.0.0"));
             System.out.println("서버 시작됨. 클라이언트 접속 대기 중...");
-
+            
             while (true) {
                 Socket socket = serverSocket.accept();
 
